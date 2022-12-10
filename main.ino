@@ -4,15 +4,12 @@
 #include <Adafruit_PN532.h>
 
 void setup(void) {
-  Serial.begin(1000000);
+  Serial.begin(9600);
   setupLights();
   setupNFCReader();
 }
 
 void loop(void) {
   playAnimation();
-
-  if (++timer % POLLING_MS == 0) {
-    readNFC();
-  }
+  readNFC();
 }

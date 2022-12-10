@@ -4,7 +4,7 @@ uint32_t fire_color   = flex.Color ( 80,  35,  00);
 uint32_t off_color    = flex.Color (  0,  0,  0);
 
 class NeoFire {
-    Adafruit_NeoPixel &flex;
+    Adafruit_NeoPixel &flex;    
 
   public:
     NeoFire(Adafruit_NeoPixel&);
@@ -20,8 +20,7 @@ class NeoFire {
 /// Constructor
 ///
 NeoFire::NeoFire(Adafruit_NeoPixel& n_flex)
-  : flex (n_flex)
-{
+  : flex (n_flex) {
 }
 
 ///
@@ -31,15 +30,14 @@ void NeoFire::Draw()
 {
   Clear();
 
-  for (int i = 0; i < CNT; i++)
-  {
+  for (int i = 0; i < flex.numPixels(); i++) {
     AddColor(i, fire_color);
     int r = random(80);
     uint32_t diff_color = flex.Color ( r, r / 2, r / 2);
     SubstractColor(i, diff_color);
   }
 
-  flex.show();
+  flex.show();  
 }
 
 ///
@@ -111,15 +109,17 @@ uint32_t NeoFire::Substract(uint32_t color1, uint32_t color2)
 ///
 /// Every LED to black
 ///
-void NeoFire::Clear()
-{
+void NeoFire::Clear() {
   for (uint16_t i = 0; i < flex.numPixels (); i++)
     flex.setPixelColor(i, off_color);
 }
 
-NeoFire fire(flex);
+NeoFire fireFlex(flex);
+NeoFire fireStrip(strip);
+NeoFire fireStrip2(strip2);
 
 void flames() {
-  fire.Draw();
-  delay(random(50, 150));
+  fireFlex.Draw();
+  fireStrip.Draw();
+  fireStrip2.Draw();
 }

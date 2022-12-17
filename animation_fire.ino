@@ -117,9 +117,15 @@ void NeoFire::Clear() {
 NeoFire fireFlex(flex);
 NeoFire fireStrip(strip);
 NeoFire fireStrip2(strip2);
+NeoFire fireStrip3(strip3);
+NeoFire fireStrip4(strip4);
+NeoFire fireStrip5(hoodStrip);
 
 void flames() {
   fireFlex.Draw();
   fireStrip.Draw();
   fireStrip2.Draw();
+  fireStrip3.Draw();
+  fireStrip4.Draw();
+  fireStrip5.Draw();
 }

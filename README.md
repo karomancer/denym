@@ -2,7 +2,8 @@
 
 Arduino code for a cyberpunk-styled jacket with programmable embroidered snap-on RFID patches that control LED lighting effects & animations.
 
-https://github.com/karomancer/jacket/assets/482817/d7755bc2-908b-44b0-81dd-d488e4cf00c5
+https://github.com/karomancer/jacket/assets/482817/db0bf898-d18c-48d9-b287-4f8d4590da2c
+
 
 ---
 
